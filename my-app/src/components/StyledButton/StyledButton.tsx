@@ -3,15 +3,15 @@ import './StyledButton.css';
 
 interface StyledButtonProps {
     onClick: () => void;
-    children: React.ReactNode;
+    content: React.ReactNode;
 }
 
-const StyledButton: React.FC<StyledButtonProps> = ({ onClick, children }) => {
+const StyledButton: React.FC<StyledButtonProps> = ({ onClick, content }) => {
     return (
         <button className="styled-button" onClick={onClick}>
-            {children}
+            {content}
         </button>
-    );
+    ); 
 };
 
 export default StyledButton;
