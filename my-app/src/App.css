@@ -2,37 +2,63 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.LeftSquare {
+  border-radius: 25px;
+  margin: 50px;
+  margin-right: 0%;
+  margin-left: 2%;
+  background-color: #F5F5F5;
+  min-height: 90vh;
+  width: calc(47%);
+  float: left;
+  box-shadow: 0px 8px 20px rgba(42, 46, 65, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.RightSquare {
+  border-radius: 25px;
+  margin: 50px;
+  margin-right: 2%;
+  margin-left: 0%;
+  background-color: #ffffff;
+  min-height: 90vh;
+  width: calc(47%);
+  float: right;
+  box-shadow: 0px 8px 20px rgba(42, 46, 65, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.LeftTitle {
+  margin-top: 25%;
+  font-size: 60px;
 }
 
-.App-link {
-  color: #61dafb;
+.BottomTitle {
+  margin-top: 10%;
+  font-size: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Description {
+  text-align: justify;
+  margin-right: 75px;
+  margin-left: 75px;
+  font-size: 25px;
+  line-height: 40px;
 }
+
+.LanguageImage {
+  height: 90px;
+  margin: 20px;
+}
+
+.PCImage {
+  height: 230px;
+  margin: 20px;
+}
+
+.SocialImage {
+  height: 50px;
+  margin: 20px;
+}
+
+
+
