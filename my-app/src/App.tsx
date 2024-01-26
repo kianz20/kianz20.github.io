@@ -46,7 +46,7 @@ function App() {
           <img className="LanguageImage" src="https://www.svgrepo.com/show/373830/matlab.svg" alt="MatLab" />
           <img className="LanguageImage" src="https://godotengine.org/assets/press/icon_color.png" alt="GDScript" />
           <img className="LanguageImage" src="https://www.step2gen.com/WebsiteAssets/assets/images/c--4.svg" alt="C#" />
-          <img className="LanguageImage" src="https://lh3.googleusercontent.com/proxy/h9XopPHHAInJzKstpMjRYiMknfnvFcCPB-Q3idMeAIhnjkych_VvNUSouw2__xTrQw7vgai2TWFW0NKRS7RfskIHGB3PCH7gsB5ypw" alt="SQL" />
+          <img className="LanguageImage" src="https://static-00.iconduck.com/assets.00/sql-database-sql-azure-icon-1955x2048-4pmty46t.png" alt="SQL" />
           <img className="LanguageImage" src="https://play-lh.googleusercontent.com/cyTI43JCjc4L-e1m7FvJhI1VhmTSJ4AMNZoqhkp0Xm6_NOtHbaewp9UPVLw5R3-tZIU" alt="PHP" />
           <h1 className="BottomTitle">I also love building PCs!</h1>
           <img className="PCImage" src="https://i.imgur.com/r06N3wy.png" alt="White PC" />

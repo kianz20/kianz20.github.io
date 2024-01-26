@@ -61,4 +61,26 @@
 }
 
 
+@media (max-width: 1000px){
+  .LeftSquare {
+    border-radius: 25px;
+    margin: 50px;
+    margin-right: 0%;
+    margin-left: 2%;
+    background-color: #F5F5F5;
+    min-height: 90vh;
+    width: calc(47%);
+    box-shadow: 0px 8px 20px rgba(42, 46, 65, 0.5);
+  }
 
+  .RightSquare {
+    border-radius: 25px;
+    margin: 50px;
+    margin-right: 2%;
+    margin-left: 0%;
+    background-color: #ffffff;
+    min-height: 90vh;
+    width: calc(47%);
+    box-shadow: 0px 8px 20px rgba(42, 46, 65, 0.5);
+  }
+}
