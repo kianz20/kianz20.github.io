@@ -31,7 +31,7 @@ Visitors read on a phone from a shared link, or on a desktop while evaluating Ki
 ## Capabilities and Constraints
 
 - Source lives in `my-app/` on `main`. Create React App with TypeScript, deployed by `npm run deploy` to the `gh-pages` branch.
-- Most project repos are private. Link source only where it is public: `kianz20/pango-garage`, `jontymorris/Sharesies-API`, `kianz20/car-finder-releases`, and GS3 at `forge.elsie.cafe/E91/GS3` (publicly readable when checked on 2026-11-06). Label the others as private source.
+- Most project repos are private. Link source only where it is public: `kianz20/pango-garage`, `kianz20/PangoGuessr`, `kianz20/yahoo-auctions-en`, `jontymorris/Sharesies-API`, `kianz20/car-finder-releases`, and GS3 at `forge.elsie.cafe/E91/GS3` (publicly readable when checked on 2026-11-06). Label the others as private source.
 - Never show GS3 chats or member handles, or PangoRankr's Sandfield category, in screenshots: they contain real people's details.
 - Several projects are not live. They are shown through screenshots and are not linked, as Kian directed on 2026-11-05.
 - `ecpl.co.nz` belongs to an unrelated roofing company. Never link it for the ECPL project.
@@ -48,6 +48,7 @@ Projects, grouped as Kian grouped them:
 
 - **Sites and platforms:** Car Finder, CarSpy, ECPL, AutoEnvy, Rangi Construction.
 - **Games:** PangoRankr (repo `pango-garage`), PangoGuessr (shared project; Kian has 16 of 31 commits). Kian replaced PangoGaming with PangoGuessr on 2026-11-06.
+- **Tools, own:** Yahoo Auctions in English (repo `yahoo-auctions-en`), browses Yahoo! Auctions Japan in English with NZD prices and runs locally. Its repo has one initial commit, so the site shows no commit count.
 - **Open source, contributed:** Sharesies-API, with five merged pull requests (#19 to #23) adding auto invest, weekly top 10, and wallet methods, and fixing bugs.
 - **Open source, own:** CarJam-API, published on PyPI as `carjam`.
 - **Team project:** GS3, a Rust Matrix client with first-class voice and a Discord voice bridge. Kian has 20 of its 44 commits and reports writing 99% of the code in those commits. Git history shows those commits hold about 94% of all lines added, excluding lockfiles. Credit Kian with the code and still name it as a shared repo.

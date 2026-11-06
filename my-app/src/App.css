@@ -182,7 +182,7 @@
   display: grid;
   grid-template-columns: 26.2rem 1fr 12.4rem 14rem;
   align-items: center;
-  height: 3.8rem;
+  height: 3.3rem;
   padding: 0 0.9rem;
   font-size: 3.7rem;
   background: #ecedf2;
@@ -209,7 +209,7 @@
 
 .row {
   width: 100%;
-  height: 3.8rem;
+  height: 3.6rem;
   padding: 0 0.9rem;
   border: 0;
   font: inherit;
@@ -246,7 +246,7 @@
   outline-color: #ffe35a;
 }
 
-/* The list keeps a resting cursor while About or PC builds is open. */
+/* The list keeps a resting cursor while About is open. */
 .row--rest {
   background: var(--key);
 }
@@ -386,27 +386,6 @@
 
 .facts--stack {
   grid-template-columns: 1fr;
-}
-
-.builds {
-  list-style: none;
-  margin: 1.2rem 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  font-size: 3.3rem;
-  text-align: center;
-}
-
-.builds img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #fff;
-  outline: 0.3rem solid var(--bevel-ink);
-  outline-offset: -0.3rem;
 }
 
 .pv__actions {
@@ -784,10 +763,6 @@
     grid-template-columns: 1fr;
   }
 
-  .builds {
-    font-size: 2.6rem;
-  }
-
   .code {
     font-size: 2rem;
   }
@@ -826,6 +801,11 @@
   .key {
     height: 4.8rem;
     font-size: 2.8rem;
+  }
+
+  /* Three keys: About takes the top row, GitHub and LinkedIn share the next. */
+  .key:first-child {
+    grid-column: 1 / -1;
   }
 
   .viewer__bar h2 {

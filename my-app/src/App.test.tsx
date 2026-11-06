@@ -33,12 +33,12 @@ test('arrow keys move the selection and update the preview', () => {
   expect(screen.getByRole('heading', { level: 3, name: 'Sharesies API' })).toBeInTheDocument();
 });
 
-test('number keys open About and PC builds', () => {
+test('the keys are About, GitHub and LinkedIn', () => {
   render(<App />);
   fireEvent.keyDown(window, { key: '1' });
   expect(screen.getByRole('heading', { name: "Hi! I'm Kian." })).toBeInTheDocument();
-  fireEvent.keyDown(window, { key: '2' });
-  expect(screen.getByRole('heading', { name: 'PC builds' })).toBeInTheDocument();
+  const keys = Array.from(screen.getByRole('navigation').children).map((k) => k.textContent);
+  expect(keys).toEqual(['1About', '2GitHub', '3LinkedIn']);
 });
 
 test('the command line runs commands and reports bad ones', () => {
@@ -54,6 +54,9 @@ test('the command line runs commands and reports bad ones', () => {
   expect(screen.getByRole('heading', { level: 3, name: 'GS3' })).toBeInTheDocument();
   send('format c:');
   expect(screen.getByRole('status')).toHaveTextContent(/bad command/i);
+  send('gs3');
+  send('pcbuilds');
+  expect(screen.getByRole('status')).toHaveTextContent(/bad command/i);
 });
 
 test('only public or verified links are offered', () => {
@@ -64,4 +67,15 @@ test('only public or verified links are offered', () => {
   const panel = screen.getByRole('region', { name: 'ECPL.HTM' });
   expect(within(panel).getByRole('heading', { level: 3, name: 'ECPL' })).toBeInTheDocument();
   expect(within(panel).queryByRole('link')).toBeNull();
+});
+
+test.each([
+  ['guessr', 'GUESSR.EXE', 'https://github.com/kianz20/PangoGuessr'],
+  ['yahoo', 'YAHOOEN.JS', 'https://github.com/kianz20/yahoo-auctions-en'],
+])('%s links to its public source', (id, file, href) => {
+  window.location.hash = `#${id}`;
+  render(<App />);
+  const panel = screen.getByRole('region', { name: file });
+  expect(within(panel).getByRole('link', { name: 'Source on GitHub' })).toHaveAttribute('href', href);
+  expect(within(panel).getByText('Source: Public')).toBeInTheDocument();
 });

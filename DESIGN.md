@@ -122,12 +122,12 @@ components:
     textColor: "{colors.blue}"
     typography: "{typography.list}"
     padding: "0 0.9rem"
-    height: "3.8rem"
+    height: "3.3rem"
   file-row:
     textColor: "{colors.ink}"
     typography: "{typography.list}"
     padding: "0 0.9rem"
-    height: "3.8rem"
+    height: "3.6rem"
   file-row-hover:
     backgroundColor: "{colors.row-hover}"
   file-row-selected:
@@ -189,7 +189,7 @@ One shipped exception is recorded here and is not part of the system: in the sta
 
 **Key Characteristics:**
 - A fixed virtual screen of 144 by 90rem, scaled to fit
-- Two bevelled windows, a command line and four numbered keys, all visible at once
+- Two bevelled windows, a command line and three numbered keys, all visible at once
 - Bitmap faces at weight 400 with font smoothing off
 - Square corners and zero-blur edges throughout
 - Warm dusk outside the windows, cool panels inside them
@@ -252,7 +252,7 @@ Cool blues and greys hold the interface, while a hot, banded sunset stays behind
 - **Window title** (400, 3.6rem on a 3.9rem line): title bars. Stacked: 2.8rem on 3.6rem.
 - **Body** (400, 3.6rem, line height 1, max 62ch): preview text and action buttons. Stacked: 2.8rem at line height 1.05.
 - **Command** (400, 3.5rem): the command line.
-- **Label** (400, 3.3rem, line height 1): column headers, keys, facts and PC build captions. Stacked: 2.6 to 2.8rem.
+- **Label** (400, 3.3rem, line height 1): column headers, keys and facts. Stacked: 2.6 to 2.8rem.
 - **Caption** (400, 3.2rem, line height 1): the stack line and status strip. A pull request list runs at 3rem. Stacked: 2.6rem.
 - **Code** (400, 3rem, line height 1.12): code blocks only. Stacked: 2rem.
 
@@ -268,9 +268,9 @@ Cool blues and greys hold the interface, while a hot, banded sunset stays behind
 
 The page is one fixed screen. At a 1440 by 900 display, 1rem is 10px, and the root size is the smaller of 100vw/144 and 100dvh/90, rounded down to a whole pixel where `round()` exists. Every length is in rem, so the composition scales as one object, like a console game. Windows wider than 16:10 stretch the desk and repeat the sky, with the city pinned left and Rangitoto pinned right.
 
-Desktop spacing follows the art grid, with one art pixel equal to 0.3rem: most gaps are 0.3, 0.6, 0.9, 1.2 or 2.4rem. Screen margins are 3rem. The name sits top left over the scene, the desk fills the middle in two columns at 1.52 to 1 with a 2.4rem gap, and the command line and key row span the bottom. File rows use a four-column grid (26.2rem, flexible, 12.4rem, 14rem) for name, description, commits and date. Rows are 3.8rem tall with no gaps, which is what keeps ten projects and three folders on one screen.
+Desktop spacing follows the art grid, with one art pixel equal to 0.3rem: most gaps are 0.3, 0.6, 0.9, 1.2 or 2.4rem. Screen margins are 3rem. The name sits top left over the scene, the desk fills the middle in two columns at 1.52 to 1 with a 2.4rem gap, and the command line and key row span the bottom. File rows use a four-column grid (26.2rem, flexible, 12.4rem, 14rem) for name, description, commits and date. Rows are 3.6rem tall and folder bands 3.3rem, with no gaps, which is what keeps eleven projects and three folders on one screen.
 
-Below 900 wide or 560 tall, the root size locks to 10px and the page scrolls. The order becomes masthead, file list, keys in a two-column grid, then preview. Column headers, commit and date columns, the command line and the beacon all drop away, the scene draws at two times its art size (96 by 60rem) behind the top of the page, rows grow to 4.8rem for touch, and a "Back to files" control closes the preview window.
+Below 900 wide or 560 tall, the root size locks to 10px and the page scrolls. The order becomes masthead, file list, keys in a two-column grid with About across the top, then preview. Column headers, commit and date columns, the command line and the beacon all drop away, the scene draws at two times its art size (96 by 60rem) behind the top of the page, rows grow to 4.8rem for touch, and a "Back to files" control closes the preview window.
 
 **The Whole-Pixel Rule.** Rem steps through whole pixels so bevels and pixel art stay crisp. New measurements stay in rem, and new desktop gaps land on multiples of 0.3rem.
 
@@ -315,7 +315,7 @@ The signature component and the site's main navigation.
 - **Column header:** grey band with a 0.3rem Bevel Ink rule beneath, desktop only.
 - **Folder band:** Folder Band ground, name in Commander Blue, `<DIR>` in Muted Slate aligned with the commits column.
 - **Rows:** names indent 2.7rem under their folder, descriptions are Muted Slate, numbers align right, and dates are DD-MM-YY.
-- **Hover / Selected:** hover tints to Row Hover. Selected fills Commander Blue with all text white. While About or PC builds is open, the row holds a Keycap Grey resting cursor.
+- **Hover / Selected:** hover tints to Row Hover. Selected fills Commander Blue with all text white. While About is open, the row holds a Keycap Grey resting cursor.
 - **Keys:** arrows, Home and End move the selection, wrapping at the ends. A keyboard press on the selected row opens the file, as does a double click.
 
 ### Preview
@@ -331,7 +331,7 @@ The signature component and the site's main navigation.
 - **Hover / Focus:** hover lightens to Keycap Hover with no transition. Active swaps to the pressed bevel. Focus is a 0.3rem Focus Rust ring drawn inside the edge.
 
 ### Navigation
-- **Style:** four function keys in a row, each a raised bevel with a white numeral on a Bevel Ink block at the left, then a Label text. Keys 1 to 4 on the keyboard press them.
+- **Style:** three function keys in a row, each a raised bevel with a white numeral on a Bevel Ink block at the left, then a Label text. Keys 1 to 3 on the keyboard press them.
 - **Current:** Commander Blue fill, white text, bevel removed.
 - **Mobile:** a two-by-two grid at 4.8rem tall between the file list and preview.
 

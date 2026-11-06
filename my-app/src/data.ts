@@ -6,10 +6,7 @@ import rangi from './assets/shots/rangi.webp';
 import rankr from './assets/shots/rankr.webp';
 import guessr from './assets/shots/guessr.webp';
 import gs3 from './assets/shots/gs3.webp';
-import pcWhite from './assets/pc/white.webp';
-import pcNuka from './assets/pc/nukacola.webp';
-import pcMine from './assets/pc/mypc.webp';
-import pcRgb from './assets/pc/rgb.webp';
+import yahoo from './assets/shots/yahoo.webp';
 
 export type Folder = 'SITES' | 'GAMES' | 'CODE';
 
@@ -191,13 +188,35 @@ export const FILES: ProjectFile[] = [
     ],
     credit: 'Shared project: 16 of 31 commits are mine',
     status: 'No public link yet',
-    source: 'Private',
+    source: 'Public',
     stack: 'React, TypeScript, Express, WebSockets',
-    links: [],
+    links: [{ label: 'Source on GitHub', href: 'https://github.com/kianz20/PangoGuessr' }],
     shot: {
       src: guessr,
       focus: '50% 70%',
       alt: 'PangoGuessr round results showing a world map with a guess in Africa, the answer at Cape Town, and the distance between them.',
+    },
+  },
+  {
+    id: 'yahoo',
+    file: 'YAHOOEN.JS',
+    folder: 'CODE',
+    name: 'Yahoo Auctions',
+    blurb: 'Japan auctions',
+    commits: null,
+    date: '06-11-26',
+    spokenDate: '6 November 2026',
+    text: [
+      'My own unofficial way to browse Yahoo! Auctions Japan in English, with prices in NZD.',
+      'Search in English and it translates your words to Japanese, showing the query so you can check it. Listings are translated by Chrome\'s on-device translator, and the whole thing runs on your own computer with no packages to install. It\'s for browsing only: to bid, you still use Yahoo or a proxy service.',
+    ],
+    status: 'Runs locally',
+    source: 'Public',
+    stack: 'JavaScript, Node, Chrome Translator API',
+    links: [{ label: 'Source on GitHub', href: 'https://github.com/kianz20/yahoo-auctions-en' }],
+    shot: {
+      src: yahoo,
+      alt: 'Search results for "toyota supra" with listing titles in English, prices in NZD and yen, bid counts and time remaining.',
     },
   },
   {
@@ -271,12 +290,5 @@ export const pullRequestUrl = (n: number) => `${SHARESIES_REPO}/pull/${n}`;
 
 export const GITHUB = 'https://github.com/kianz20';
 export const LINKEDIN = 'https://www.linkedin.com/in/kian-jazayeri-976614220/';
-
-export const PC_BUILDS = [
-  { src: pcWhite, title: 'White', alt: 'White PC with a white liquid cooler and GeForce RTX graphics card.' },
-  { src: pcNuka, title: 'Nuka-Cola', alt: 'NZXT PC with a custom Nuka-Cola painted side panel and red cables.' },
-  { src: pcMine, title: 'My PC', alt: 'Dual-chamber glass PC lit with rainbow light strips.' },
-  { src: pcRgb, title: 'RGB', alt: 'Black PC with three large fans glowing pink and blue.' },
-];
 
 export const SKILLS = 'Java, Python, JavaScript, TypeScript, React, Rust, C#, SQL, PHP, MATLAB, GDScript';

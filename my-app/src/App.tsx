@@ -4,20 +4,19 @@ import {
   FOLDERS,
   GITHUB,
   LINKEDIN,
-  PC_BUILDS,
   ProjectFile,
   SKILLS,
   pullRequestUrl,
 } from './data';
 import './App.css';
 
-type Panel = 'file' | 'about' | 'pcbuilds';
+type Panel = 'file' | 'about';
 
 const fileById = (id: string) => FILES.find((f) => f.id === id);
 
 const readHash = (): { panel: Panel; id: string } => {
   const hash = window.location.hash.slice(1).toLowerCase();
-  if (hash === 'about' || hash === 'pcbuilds') return { panel: hash, id: FILES[0].id };
+  if (hash === 'about') return { panel: hash, id: FILES[0].id };
   return { panel: 'file', id: fileById(hash)?.id ?? FILES[0].id };
 };
 
@@ -149,23 +148,6 @@ function About() {
   );
 }
 
-function PcBuilds() {
-  return (
-    <>
-      <h3 className="pv__name">PC builds</h3>
-      <p className="pv__text">I also love building PCs. Here are four of them.</p>
-      <ul className="builds">
-        {PC_BUILDS.map((b) => (
-          <li key={b.title}>
-            <img src={b.src} alt={b.alt} loading="lazy" />
-            <span>{b.title}</span>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-}
-
 function App() {
   const initial = useMemo(readHash, []);
   const [panel, setPanel] = useState<Panel>(initial.panel);
@@ -282,9 +264,8 @@ function App() {
       else if (e.key === 'Home') move(0);
       else if (e.key === 'End') move(FILES.length - 1);
       else if (e.key === '1') showPanel('about');
-      else if (e.key === '2') showPanel('pcbuilds');
-      else if (e.key === '3') openExternal(GITHUB);
-      else if (e.key === '4') openExternal(LINKEDIN);
+      else if (e.key === '2') openExternal(GITHUB);
+      else if (e.key === '3') openExternal(LINKEDIN);
       else if (/^[a-z]$/i.test(e.key)) document.getElementById('cmd')?.focus();
     };
     window.addEventListener('keydown', onKey);
@@ -319,15 +300,12 @@ function App() {
       );
 
     if (verb === 'help') {
-      setReply('DIR, CD <folder>, RUN <file>, ABOUT, PCBUILDS, GITHUB, LINKEDIN');
+      setReply('DIR, CD <folder>, RUN <file>, ABOUT, GITHUB, LINKEDIN');
     } else if (verb === 'dir') {
       setReply(`${FILES.length} files in ${FOLDERS.length} folders`);
     } else if (verb === 'about' || raw === 'about.txt') {
       showPanel('about');
       setReply('Opened ABOUT.TXT');
-    } else if (verb === 'pcbuilds') {
-      showPanel('pcbuilds');
-      setReply('Opened PCBUILDS');
     } else if (verb === 'github' || verb === 'linkedin') {
       openExternal(verb === 'github' ? GITHUB : LINKEDIN);
       setReply(`Opened ${verb.toUpperCase()}`);
@@ -353,7 +331,7 @@ function App() {
     }
   };
 
-  const panelTitle = panel === 'about' ? 'ABOUT.TXT' : panel === 'pcbuilds' ? 'PCBUILDS' : selected.file;
+  const panelTitle = panel === 'about' ? 'ABOUT.TXT' : selected.file;
   const path = panel === 'file' ? `C:\\KIAN\\${selected.folder}>` : 'C:\\KIAN>';
 
   return (
@@ -432,7 +410,6 @@ function App() {
           <div className="pv" ref={previewBody} tabIndex={0} aria-label={`${panelTitle} contents`}>
             {panel === 'file' && <FileDetails file={selected} onZoom={() => setZoomed(true)} />}
             {panel === 'about' && <About />}
-            {panel === 'pcbuilds' && <PcBuilds />}
           </div>
           {panel === 'file' && (
             <div className="strip">
@@ -492,14 +469,11 @@ function App() {
         <button type="button" className="btn key" aria-current={panel === 'about' ? 'true' : undefined} onClick={() => { showPanel('about'); scrollToPreview(); }}>
           <i>1</i>About
         </button>
-        <button type="button" className="btn key" aria-current={panel === 'pcbuilds' ? 'true' : undefined} onClick={() => { showPanel('pcbuilds'); scrollToPreview(); }}>
-          <i>2</i>PC builds
-        </button>
         <a className="btn key" href={GITHUB} target="_blank" rel="noreferrer">
-          <i>3</i>GitHub
+          <i>2</i>GitHub
         </a>
         <a className="btn key" href={LINKEDIN} target="_blank" rel="noreferrer">
-          <i>4</i>LinkedIn
+          <i>3</i>LinkedIn
         </a>
       </nav>
 
