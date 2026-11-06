@@ -1,15 +1,136 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #c5c8eb;
-  font-family: Abel
+@font-face {
+  font-family: 'Jersey 15';
+  src: url('./assets/fonts/jersey15.ttf') format('truetype');
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('./assets/fonts/pressstart2p.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('./assets/fonts/vt323.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --ink: #10123c;
+  --night: #141852;
+  --blue: #141e8c;
+  --muted: #4f536c;
+  --grey: #e2e3eb;
+  --key: #c8cad6;
+  --bevel-dark: #7c8098;
+  --bevel-ink: #4a4e6c;
+  --ok: #14703a;
+  --amber-hot: #ff5050;
+  --display: 'Press Start 2P', monospace;
+  --text: 'Jersey 15', 'Courier New', monospace;
+  --mono: 'VT323', 'Courier New', monospace;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Scale the whole screen to fit, the way a console game fills a TV. */
+html {
+  font-size: min(calc(100vw / 144), calc(100vh / 90));
+  font-size: min(calc(100vw / 144), calc(100dvh / 90));
+  /* Whole-pixel steps keep the pixel art and bevels crisp where round() exists. */
+  font-size: round(down, calc(min(calc(100vw / 144), calc(100dvh / 90)) + 0.01px), 1px);
+}
+
+/* Firefox has no custom scrollbar parts; Chrome ignores those parts if this is set. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--bevel-ink) var(--grey);
+  }
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #0a103a;
+  font-family: var(--text);
+  font-size: 3.7rem;
+  -webkit-font-smoothing: none;
+}
+
+::selection {
+  color: #fff;
+  background: var(--blue);
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 0.3em;
+}
+
+:focus-visible {
+  outline: 0.3rem solid #b83a00;
+  outline-offset: -0.3rem;
+}
+
+::-webkit-scrollbar {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--grey);
+  box-shadow: inset 0.3rem 0 0 var(--bevel-dark);
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: block;
+  height: 1.5rem;
+  background-color: var(--key);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  box-shadow: inset 0.2rem 0.2rem 0 #fff, inset -0.2rem -0.2rem 0 var(--bevel-dark);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 4' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z' fill='%2310123c'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z' fill='%2310123c'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--key);
+  box-shadow: inset 0.3rem 0.3rem 0 #fff, inset -0.3rem -0.3rem 0 var(--bevel-dark);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 899px), (max-height: 559px) {
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    font-size: 2.8rem;
+  }
+
+  :focus-visible {
+    outline-width: 2px;
+    outline-offset: -2px;
+  }
 }
