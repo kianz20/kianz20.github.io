@@ -1,28 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.a1cf5f21.css",
-    "main.js": "/static/js/main.de03bb57.js",
+    "main.css": "/static/css/main.a80f5c2c.css",
+    "main.js": "/static/js/main.c2d0059a.js",
     "static/media/vt323.ttf": "/static/media/vt323.4cd487288b6de9b2f74f.ttf",
     "static/media/pressstart2p.ttf": "/static/media/pressstart2p.c4f6a3d49cd1dd4f5ca8.ttf",
+    "static/media/yahoo.webp": "/static/media/yahoo.ecf369b3cd5395ebc437.webp",
     "static/media/ecpl.webp": "/static/media/ecpl.3f5d6404e03813318b06.webp",
     "static/media/jersey15.ttf": "/static/media/jersey15.cf3600eb7452b20dcfb4.ttf",
     "static/media/rangi.webp": "/static/media/rangi.fbe9fd04a94d85f3d856.webp",
-    "static/media/white.webp": "/static/media/white.3a1c4a7cd9c71a1fcf1a.webp",
-    "static/media/rgb.webp": "/static/media/rgb.9db95bb4b41eaee4ee96.webp",
     "static/media/carspy.webp": "/static/media/carspy.be6d0387561021ca3d45.webp",
     "static/media/guessr.webp": "/static/media/guessr.462fbfeea8b3cda93544.webp",
-    "static/media/mypc.webp": "/static/media/mypc.17207430be82460d2444.webp",
     "static/media/autoenvy.webp": "/static/media/autoenvy.98171867bb12dcf4e580.webp",
-    "static/media/nukacola.webp": "/static/media/nukacola.4950d6859b902acea4e1.webp",
     "static/media/rankr.webp": "/static/media/rankr.aadf78d28e2f91c17d20.webp",
     "static/media/carfinder.webp": "/static/media/carfinder.f73f967d8905268f37b2.webp",
     "static/media/gs3.webp": "/static/media/gs3.e70f8ceb4bf50bf19bf3.webp",
     "index.html": "/index.html",
-    "main.a1cf5f21.css.map": "/static/css/main.a1cf5f21.css.map",
-    "main.de03bb57.js.map": "/static/js/main.de03bb57.js.map"
+    "main.a80f5c2c.css.map": "/static/css/main.a80f5c2c.css.map",
+    "main.c2d0059a.js.map": "/static/js/main.c2d0059a.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1cf5f21.css",
-    "static/js/main.de03bb57.js"
+    "static/css/main.a80f5c2c.css",
+    "static/js/main.c2d0059a.js"
   ]
 }
